@@ -5,8 +5,6 @@ import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
-const baseUrl = 'http://localhost:3333';
-
 const blankSmurf = {
   name: '',
   age: '',
@@ -25,7 +23,7 @@ class App extends Component {
   // Notice what your map function is looping over and returning inside of Smurfs.
   // You'll need to make sure you have the right properties on state and pass them down to props.
   componentDidMount() {
-    axios.get(`${baseUrl}/smurfs`)
+    axios.get('http://localhost:3333/smurfs')
       .then(response => {
         this.setState({
           smurfs: response.data
@@ -38,7 +36,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.smurfs)
     return (
       <div className="App">
         <SmurfForm />
