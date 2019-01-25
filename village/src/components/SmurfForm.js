@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-class SmurfForm extends Component {
+class SmurfForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +23,7 @@ class SmurfForm extends Component {
           age: '',
           height: ''
         })
+        this.props.history.push('/');
       })
       .catch(error => {
         console.log(error)
